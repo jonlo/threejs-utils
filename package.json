@@ -1,0 +1,56 @@
+{
+  "name": "jonlo-threejs-utils",
+  "version": "1.0.0",
+  "description": "",
+  "main": "threejsUtils.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "webpack-dev-server",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonlo/threejs-utils.git"
+  },
+  "keywords": [
+    "threejs",
+    "utils",
+    "transform",
+    "scene"
+  ],
+  "author": "Jon Lopez de Guereña",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jonlo/threejs-utils/issues"
+  },
+  "homepage": "https://github.com/jonlo/threejs-utils#readme",
+  "devDependencies": {
+    "@babel/cli": "7.5.0",
+    "@babel/core": "7.5.4",
+    "@babel/node": "7.5.0",
+    "@babel/parser": "7.4.5",
+    "@babel/preset-env": "7.5.4",
+    "babel-loader": "8.0.6",
+    "babel-polyfill": "^6.0.16",
+    "babel-preset-es2015": "^6.0.15",
+    "babel-preset-stage-0": "^6.0.15",
+    "css-loader": "3.2.0",
+    "file-loader": "4.0.0",
+    "html-loader": "0.5.5",
+    "html-webpack-plugin": "3.2.0",
+    "image-webpack-loader": "5.0.0",
+    "mini-css-extract-plugin": "0.8.0",
+    "ttf-loader": "1.0.2",
+    "uglifyjs-webpack-plugin": "2.1.3",
+    "url-loader": "2.0.1",
+    "webpack": "4.41.1",
+    "webpack-auto-inject-version": "1.2.2",
+    "webpack-bundle-analyzer": "3.4.1",
+    "webpack-cli": "3.3.9",
+    "webpack-dev-server": "3.7.2",
+    "three": "0.120.1"
+  },
+  "peerDependencies": {
+    "three": ">= 0.114 < 1"
+  }
+}
