@@ -1,4 +1,4 @@
-import { WebGLRenderer, Scene, PerspectiveCamera, BoxGeometry, MeshBasicMaterial, Mesh } from 'three';
+import { WebGLRenderer, Scene, PerspectiveCamera, BoxGeometry, Vector3, MeshBasicMaterial, Mesh, Math as THREEMath, Quaternion } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { SceneUtils } from '../threejsUtils';
 import { TransformUtils } from '../threejsUtils';
@@ -32,10 +32,16 @@ function main() {
 	controls = new OrbitControls(camera, renderer.domElement);
 	//controls.update() must be called after any manual changes to the camera's transform
 	controls.update();
-	createCube();
-	SceneUtils.center(scene,camera,controls,1,2,false);
-
+	let cube = createCube();
+	test();
 };
+
+function test(){
+	SceneUtils.center(scene, camera, controls, 1, 2, false);
+	TransformUtils.rotateObject3dOnAxis(cube, new Vector3(1, 0, 0), THREEMath.degToRad(45));
+	let pivotMatrix = TransformUtils.createPivotMatrix(new Vector3(5, 0, 0), new Quaternion(), new Vector3(1, 1, 1));
+	TransformUtils.rotateObject3dAroundPivotOnAxis(cube, pivotMatrix, new Vector3(0, 1, 0), THREEMath.degToRad(90))
+}
 
 function createCube(width, height, depth, color) {
 	var geometry = new BoxGeometry(width, height, depth);

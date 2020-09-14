@@ -1,9 +1,21 @@
+/**
+ * @classdesc Scene utils
+ * @class SceneUtils
+ * 
+ **/
+
 import { Camera, Light, BoxHelper, Vector3 } from 'three'
 
 const CAMERA_TYPE = Object.freeze({ 'OrthographicCamera': 'OrthographicCamera', 'PerspectiveCamera': 'PerspectiveCamera' });
 
 export class SceneUtils {
 
+    /**
+     * centers the camera over all the scene3d objects
+     * @name center
+     * @function center
+     * @example SceneUtils.center(scene, camera, controls, 0, 1, 1);
+     */
     static center(scene, camera, controls, axis, caf, inverse) {
         let BbMaxx = -Infinity;
         let BbMaxy = -Infinity;
